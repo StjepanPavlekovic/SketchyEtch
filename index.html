@@ -17,7 +17,8 @@
     <body>
         <header>
             <nav>
-                <a href="#">SketchyEtch</a>
+                <img src="./assets/brush.png" />
+                <a id="logo" href="#">SketchyEtch </a>
                 <a id="guide" href="#">How to use?</a>
             </nav>
         </header>
@@ -29,9 +30,19 @@
                     <div class="menu-item">
                         <h2>Color mode:</h2>
                         <div class="colors">
-                            <button class="btnSelected">Black</button>
-                            <button>Greyscale</button>
-                            <button>Rainbow</button>
+                            <button
+                                onclick="setColorScheme(0)"
+                                id="btnBlack"
+                                class="btnSelected"
+                            >
+                                Black
+                            </button>
+                            <button onclick="setColorScheme(1)" id="btnDark">
+                                Darken
+                            </button>
+                            <button onclick="setColorScheme(2)" id="btnRainbow">
+                                Rainbow
+                            </button>
                         </div>
                     </div>
 
@@ -41,13 +52,16 @@
                             type="range"
                             oninput="updateResolution()"
                             class="slider"
+                            value="16"
                             min="16"
                             max="100"
                         />
                         <span id="currentRes">Current: 16</span>
                     </div>
                     <div class="menu-item">
-                        <button class="resetBoard">Reset board</button>
+                        <button class="resetBoard" onclick="resetBoard()">
+                            Reset board
+                        </button>
                     </div>
                 </div>
 
