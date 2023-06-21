@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>SketchyEtch</title>
+
+        <link rel="stylesheet" href="style.css" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="#">SketchyEtch</a>
+                <a id="guide" href="#">How to use?</a>
+            </nav>
+        </header>
+
+        <section id="main-area">
+            <div class="container">
+                <div class="settings">
+                    <h1>Settings:</h1>
+                    <div class="menu-item">
+                        <h2>Color mode:</h2>
+                        <div class="colors">
+                            <button class="btnSelected">Black</button>
+                            <button>Greyscale</button>
+                            <button>Rainbow</button>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <h2>Grid resolution:</h2>
+                        <input
+                            type="range"
+                            oninput="updateResolution()"
+                            class="slider"
+                            min="16"
+                            max="100"
+                        />
+                        <span id="currentRes">Current: 16</span>
+                    </div>
+                    <div class="menu-item">
+                        <button class="resetBoard">Reset board</button>
+                    </div>
+                </div>
+
+                <div class="board"></div>
+            </div>
+        </section>
+
+        <footer>
+            <a
+                href="https://github.com/StjepanPavlekovic"
+                target="_blank"
+                class="footer-info"
+            >
+                <span>Made by Pavlek | TheOdinProject</span><br />
+                <span>2023</span>
+            </a>
+        </footer>
+
+        <dialog id="dialog">
+            <div class="dialog-header">
+                <span>How to use:</span>
+                <button onclick="closeDialog()" id="closeDialogHeader">
+                    X
+                </button>
+            </div>
+            <p>
+                Choose your preferred draw mode and create away. You may also
+                modify the grid resolution (16-100) for more artistic freedom.
+            </p>
+        </dialog>
+        <script src="script.js"></script>
+    </body>
+</html>
